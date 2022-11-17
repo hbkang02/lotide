@@ -11,7 +11,7 @@ const assertEqual = function(actual, expected) {
 const countLetters = function(sentence) {
   let divSentence = sentence.split(" ").join("");
   const count = {};
-  for (const letters of sentence) {
+  for (const letters of divSentence) {
     if (letters !== " ") {
       if (count[letters]) {
         count[letters] += 1;
@@ -23,7 +23,7 @@ const countLetters = function(sentence) {
   return count;
 };
 
-console.log(countLetters("lighthouse"));
+console.log(countLetters("lighthouse is lll"));
 // countLetters will change sentence in string (for of loop)
 // exclude " " 
 // return count of each letters
