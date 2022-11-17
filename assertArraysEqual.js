@@ -1,26 +1,24 @@
-const eqArrays = function(arr1, arr2) {
+function eqArrays(arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false;
   }
   for (let i = 0; i < arr1.length; i++) {
-    if (Array.isArray(arr1[i]) && (eqArrays(arr1[i], arr2[i]) === false)) {
+    if(arr1[i] !== arr2[i]) {
       return false;
     }
-    if (!(Array.isArray(arr1[i])) && arr1[i] !== arr2[i]) {
-      return false;
-    }
-  } 
+  }
   return true;
 };
 
 //take in two arrays and console.log message/ pass or fail.
-function assertArraysEqual(a, b) {
-  if (eqArrays(a, b)) {
-    console.log(`Assertion Passed`);
-  } 
-    console.log('Assertion failed');
-};
+function assertArraysEqual(arr1, arr2) {
+    if (eqArrays(arr1, arr2)) {
+      console.log(`👌🏻👌🏻👌🏻Assertion Passed: ${arr1}  === ${arr2}`);
+    } else {
+      console.log(`💩💩💩Assertion Failed: ${arr1}  !== ${arr2}`);
+    }
+  };
+  
 
-assertArraysEqual("Lighthouse Labs", "Bootcamp");
 
-assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
+assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]));
