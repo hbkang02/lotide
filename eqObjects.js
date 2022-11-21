@@ -40,7 +40,7 @@ const eqObjects = function(object1, object2) {
 
   }
   return true;
-}
+};
 //incomplete
 
 const ab = { a: "1", b: "2" };
