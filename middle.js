@@ -16,16 +16,20 @@ const middle = function (array) {
   } else if (array.length % 2 === 0) {
     middleNum.push(Math.floor(array[array.length / 2] - 1));
     middleNum.push(Math.floor(array[array.length / 2]));
-    
-  } else if (array.length % 2 !== 0) {
-    return middleNum.push(Math.floor(array[array.length / 2]));
+    return middleNum;
+  } else {
+    const oddArr = Math.floor(array.length / 2);
+    middleNum.push(array[oddArr]);
+    return middleNum;
   }
 };
 
-console.log(middle([1])); // empty array
-assertArraysEqual(middle([1, 2])); // empty array
+// console.log(middle([1])); // empty array
+// assertArraysEqual(middle([1, 2])); // empty array
 
-console.log(middle([1, 2, 3])); // [2]
-middle([1, 2, 3, 4, 5]) // => 3
+// console.log(middle([1, 2, 3])); // [2]
+// middle([1, 2, 3, 4, 5]) // => 3
 
-middle([1, 2, 3, 4])// => [2, 3];
+// middle([1, 2, 3, 4])// => [2, 3];
+
+module.exports = middle;

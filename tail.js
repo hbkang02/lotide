@@ -5,6 +5,4 @@ const tail = function(array) {
 };
 
 
-const words = ["Yo Yo"];
-tail(words);
-assertEqual(words.length, 3);
+module.exports = tail;
